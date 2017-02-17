@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="./app.js"></script>
+    <script>
+      window.onload = function() {
+        console.log( "Account" + web3.eth.accounts[2] );
+        
+        MetaCoin.deployed().then(function(instance) {
+            return instance.getBalance.call(web3.eth.accounts[2]);
+        }).then( function(balance) {
+            document.body.innerHTML = document.body.innerHTML  + " balance " + balance;
+        });
+
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
